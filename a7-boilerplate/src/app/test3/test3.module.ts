@@ -11,4 +11,4 @@ import { Test3RouterModule, test3RoutingComponents } from './test3-router.module
     HttpClientModule
   ]
 })
-export class Test3Module { }
+export class Test3Module { } 

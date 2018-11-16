@@ -17,12 +17,8 @@ export class LogService {
 
   log(log : Log)
   {
-  debugger;
-    //log to console
-    //console.log(log.Message);
     
     return this.http.post<Boolean>(environment.logApi,
-      //log, {headers: this.authenticationService.GetRequestOptions()})
       log, {headers: this.authenticationService.GetContentTypeHeaderJson()})
       .pipe(
        map((response: Boolean) => response
