@@ -8,6 +8,8 @@ import { NavComponent } from './nav/nav.component';
 
 import { TokenInterceptor } from './shared/interceptor/token.interceptor';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -39,9 +41,11 @@ import { GlobalErrorHandler } from './shared/error/GlobalErrorHandler';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
 
     MatTableModule,
     MatDialogModule,
+    MatSortModule,
 
     ToastrModule.forRoot()
   ],
@@ -56,11 +60,11 @@ import { GlobalErrorHandler } from './shared/error/GlobalErrorHandler';
   //   provide: ErrorHandler, 
   //   useClass: GlobalErrorHandler
   // },
-  // {
-  //   provide: HTTP_INTERCEPTORS, 
-  //   useClass: TokenInterceptor,
-  //   multi: true
-  // },
+  {
+     provide: HTTP_INTERCEPTORS, 
+     useClass: TokenInterceptor,
+     multi: true
+   },
 
   AuthenticationService,
   ConfigService,
