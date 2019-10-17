@@ -12,7 +12,7 @@ export class AppComponent {
   version: string = environment.envVersion;
   environment: string = environment.envName;
 
-  @ViewChild(ToastContainerDirective) toastContainer: ToastContainerDirective;
+  @ViewChild(ToastContainerDirective, { static: false }) toastContainer: ToastContainerDirective;
 
   constructor(public configService: ConfigService, private toastrService: ToastrService)
   {

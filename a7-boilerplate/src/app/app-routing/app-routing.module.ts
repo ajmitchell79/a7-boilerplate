@@ -25,7 +25,7 @@ const routes: Routes = [ {
 },
 {
   path: 'test3', 
- loadChildren: '../test3/test3.module#Test3Module'
+ loadChildren: () => import('../test3/test3.module').then(m => m.Test3Module)
 },
 {
   path: 'error',component: ErrorComponent
